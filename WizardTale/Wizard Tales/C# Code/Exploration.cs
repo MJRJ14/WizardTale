@@ -87,7 +87,7 @@ namespace Wizard_Tales.ExplorationC
                     Console.ForegroundColor = Information.RarityColor[randomRaritySelection];
 
                     Console.WriteLine(RandomRarirty[randomRaritySelection] + " - " + RandomItem[randomItemSelection]);
-                    Inventory.InventoryList.Add(RandomRarirty[randomRaritySelection] + " - " + RandomItem[randomItemSelection]);
+                    Inventory.InventoryList.Add(RandomRarirty[randomRaritySelection].ToString() + " - " + RandomItem[randomItemSelection].ToString());
                     Inventory.InventoryCount++;
                     Inventory.InventoryMethod();
                     Console.ResetColor();
@@ -95,7 +95,7 @@ namespace Wizard_Tales.ExplorationC
                     Console.Write("\n\n");
                     Console.CursorLeft = ((Console.WindowWidth - 21) / 2);
                     Console.Write("Press any key to exit: ");
-                    Console.ReadKey();
+                    Console.ReadKey(true);
                 }
                 if (encounterResult >= 31 && encounterResult <= 99) // Combat
                 {

@@ -8,6 +8,8 @@ using Wizard_Tales.IntroC;
 using Wizard_Tales.ExplorationC;
 using Wizard_Tales.SaveAndLoad;
 using Wizard_Tales.WorldMethodsC;
+using Wizard_Tales.InventoryC;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Wizard_Tales.WizardC
 {
@@ -87,6 +89,7 @@ namespace Wizard_Tales.WizardC
         }
         public void ReadStats()
         {
+            Inventory inventory = new Inventory();
             Console.ResetColor();
             Console.Write("\n");
             Console.Write("Name: ");
@@ -110,6 +113,7 @@ namespace Wizard_Tales.WizardC
         {
             if (startProgram == true)
             {
+                Inventory inventory = new Inventory();
                 Exporation exporation = new Exporation();
                 Console.Clear();
                 Console.ResetColor();
@@ -122,6 +126,7 @@ namespace Wizard_Tales.WizardC
                 Console.WriteLine("\t1.  Practice Spell(s)");
                 Console.WriteLine("\t2.  Meditate");
                 Console.WriteLine("\t3.  Explore");
+                Console.WriteLine("\t4.  Inventory");
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("\tESC.  Exit");
                 Console.ResetColor();
@@ -131,6 +136,11 @@ namespace Wizard_Tales.WizardC
                 Console.Clear();
                 titleMethod();
                 ReadStats();
+                if (UserKeyPress.Key == ConsoleKey.D4)
+                {
+                    OpenInventory();
+                    valid = true;
+                }
                 if (UserKeyPress.Key == ConsoleKey.D3)
                 {
                     exporation.ExporationChance();
@@ -261,6 +271,104 @@ namespace Wizard_Tales.WizardC
             string title = "~Wizard Tales~";
             Console.CursorLeft = ((Console.WindowWidth - title.Length) / 2);
             Console.WriteLine(title);
+        }
+        public void OpenInventory()
+        {
+            Inventory inventory = new Inventory();
+            WorldMethods World = new WorldMethods();
+            Console.Clear();
+            Console.ResetColor();
+            titleMethod();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Inventory:");
+            Console.ResetColor();
+            Console.Write("\n");
+            if (inventory.CommonItemList.Count > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\tCommon:");
+                Console.ForegroundColor = World.RarityColor[0];
+                for (int i = 0; i < inventory.CommonItemList.Count; i++)
+                {
+                    Console.WriteLine("\t\t" + inventory.CommonItemList[i]);
+                }
+                Console.ResetColor();
+                Console.Write("\n");
+            }
+            if (inventory.UncommonItemList.Count > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\tUncommon:");
+                Console.ForegroundColor = World.RarityColor[1];
+                for (int i = 0; i < inventory.UncommonItemList.Count; i++)
+                {
+                    Console.WriteLine("\t\t" + inventory.UncommonItemList[i]);
+                }
+                Console.ResetColor();
+                Console.Write("\n");
+            }
+            if (inventory.RareItemList.Count > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\tRare:");
+                Console.ForegroundColor = World.RarityColor[2];
+                for (int i = 0; i < inventory.RareItemList.Count; i++)
+                {
+                    Console.WriteLine("\t\t" + inventory.RareItemList[i]);
+                }
+                Console.ResetColor();
+                Console.Write("\n");
+            }
+            if (inventory.EpicItemList.Count > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\tEpic:");
+                Console.ForegroundColor = World.RarityColor[3];
+                for (int i = 0; i < inventory.EpicItemList.Count; i++)
+                {
+                    Console.WriteLine("\t\t" + inventory.EpicItemList[i]);
+                }
+                Console.ResetColor();
+                Console.Write("\n");
+            }
+            if (inventory.LegendaryItemList.Count > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\tLegendary:");
+                Console.ForegroundColor = World.RarityColor[4];
+                for (int i = 0; i < inventory.LegendaryItemList.Count; i++)
+                {
+                    Console.WriteLine("\t\t" + inventory.LegendaryItemList[i]);
+                }
+                Console.ResetColor();
+                Console.Write("\n");
+            }
+            if (inventory.MythicalItemList.Count > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\tMythical:");
+                Console.ForegroundColor = World.RarityColor[5];
+                for (int i = 0; i < inventory.MythicalItemList.Count; i++)
+                {
+                    Console.WriteLine("\t\t" + inventory.MythicalItemList[i]);
+                }
+                Console.ResetColor();
+                Console.Write("\n");
+            }
+            if (inventory.GodlyItemList.Count > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\tGodly:");
+                Console.ForegroundColor = World.RarityColor[6];
+                for (int i = 0; i < inventory.GodlyItemList.Count; i++)
+                {
+                    Console.WriteLine("\t\t" + inventory.GodlyItemList[i]);
+                }
+                Console.ResetColor();
+                Console.Write("\n");
+            }
+            Console.Write("Press any key to go back: ");
+            Console.ReadKey(true);
         }
     }
 }
