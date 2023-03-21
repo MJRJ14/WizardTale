@@ -1,0 +1,6 @@
+﻿Name: 
+Level: 0
+Experience: 0.0
+SpellSlots: 2
+UsedSpellSlots: 0
+Learned Spells: "Magic Blast";

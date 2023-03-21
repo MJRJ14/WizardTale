@@ -14,3 +14,19 @@ C:\Users\mjeff\Desktop\GitHub\WizardTale\WizardTale\Wizard Tales\obj\Debug\Wizar
 C:\Users\mjeff\Desktop\GitHub\WizardTale\WizardTale\Wizard Tales\obj\Debug\Wizard Tales.csproj.CoreCompileInputs.cache
 C:\Users\mjeff\Desktop\GitHub\WizardTale\WizardTale\Wizard Tales\obj\Debug\Wizard Tales.exe
 C:\Users\mjeff\Desktop\GitHub\WizardTale\WizardTale\Wizard Tales\obj\Debug\Wizard Tales.pdb
+C:\Users\mjeffery3\Downloads\WizardTale-main\WizardTale\Wizard Tales\bin\Debug\Wizard Tales.exe.config
+C:\Users\mjeffery3\Downloads\WizardTale-main\WizardTale\Wizard Tales\bin\Debug\Wizard Tales.exe
+C:\Users\mjeffery3\Downloads\WizardTale-main\WizardTale\Wizard Tales\bin\Debug\Wizard Tales.pdb
+C:\Users\mjeffery3\Downloads\WizardTale-main\WizardTale\Wizard Tales\obj\Debug\Wizard Tales.csproj.AssemblyReference.cache
+C:\Users\mjeffery3\Downloads\WizardTale-main\WizardTale\Wizard Tales\obj\Debug\Wizard Tales.csproj.SuggestedBindingRedirects.cache
+C:\Users\mjeffery3\Downloads\WizardTale-main\WizardTale\Wizard Tales\obj\Debug\Wizard Tales.csproj.CoreCompileInputs.cache
+C:\Users\mjeffery3\Downloads\WizardTale-main\WizardTale\Wizard Tales\obj\Debug\Wizard Tales.exe
+C:\Users\mjeffery3\Downloads\WizardTale-main\WizardTale\Wizard Tales\obj\Debug\Wizard Tales.pdb
+C:\Users\mjeffery3\OneDrive - NAIT\New WizardTale\Wizard Tales\bin\Debug\Wizard Tales.exe.config
+C:\Users\mjeffery3\OneDrive - NAIT\New WizardTale\Wizard Tales\bin\Debug\Wizard Tales.exe
+C:\Users\mjeffery3\OneDrive - NAIT\New WizardTale\Wizard Tales\bin\Debug\Wizard Tales.pdb
+C:\Users\mjeffery3\OneDrive - NAIT\New WizardTale\Wizard Tales\obj\Debug\Wizard Tales.csproj.AssemblyReference.cache
+C:\Users\mjeffery3\OneDrive - NAIT\New WizardTale\Wizard Tales\obj\Debug\Wizard Tales.csproj.SuggestedBindingRedirects.cache
+C:\Users\mjeffery3\OneDrive - NAIT\New WizardTale\Wizard Tales\obj\Debug\Wizard Tales.csproj.CoreCompileInputs.cache
+C:\Users\mjeffery3\OneDrive - NAIT\New WizardTale\Wizard Tales\obj\Debug\Wizard Tales.exe
+C:\Users\mjeffery3\OneDrive - NAIT\New WizardTale\Wizard Tales\obj\Debug\Wizard Tales.pdb
