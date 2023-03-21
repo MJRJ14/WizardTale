@@ -24,6 +24,7 @@ namespace Wizard_Tales.WizardC
         public int level;
         public int spellSlotsUsed;
         public int spellChoice;
+        public bool startProgram { get; set; } = false;
         public void SpellChoice()
         {
             Console.Clear();
@@ -107,56 +108,59 @@ namespace Wizard_Tales.WizardC
         }
         public void UserPrompt()
         {
-            Exporation exporation = new Exporation();
-            Console.Clear();
-            titleMethod();
-            bool valid = false;
-        userpromptstart:
-            ReadStats();
-            Console.Write("\n");
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("\t1.  Practice Spell(s)");
-            Console.WriteLine("\t2.  Meditate");
-            Console.WriteLine("\t3.  Explore");
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine("\tESC.  Exit");
-            Console.ResetColor();
-            Console.Write("\n");
-            Console.Write("What would you like to do?: ");
-            ConsoleKeyInfo wizardsChoice = Console.ReadKey();
-            Console.Clear();
-            titleMethod();
-            ReadStats();
-            if (wizardsChoice.Key == ConsoleKey.D3)
+            if (startProgram == true)
             {
-                exporation.ExporationChance();
-                valid = true;
-                System.Threading.Thread.Sleep(1000);
-            }
-            if (wizardsChoice.Key == ConsoleKey.D2)
-            {
-                Meditate();
-                valid = true;
-                System.Threading.Thread.Sleep(1000);
-            }
-            if (wizardsChoice.Key == ConsoleKey.D1)
-            {
-                SpellChoice();
-                valid = true;
-                System.Threading.Thread.Sleep(1000);
-            }
-            if (wizardsChoice.Key == ConsoleKey.Escape)
-            {
-                System.Environment.Exit(0);
-            }
-            if (valid == false)
-            {
+                Exporation exporation = new Exporation();
+                Console.Clear();
+                Console.ResetColor();
+                titleMethod();
+                bool valid = false;
+            userpromptstart:
+                ReadStats();
+                Console.Write("\n");
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine("\t1.  Practice Spell(s)");
+                Console.WriteLine("\t2.  Meditate");
+                Console.WriteLine("\t3.  Explore");
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine("\tESC.  Exit");
+                Console.ResetColor();
+                Console.Write("\n");
+                Console.Write("What would you like to do?: ");
+                ConsoleKeyInfo UserKeyPress = Console.ReadKey(true);
                 Console.Clear();
                 titleMethod();
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.Write("You can only 'Meditate,' or 'Cast Spell.'");
-                Console.ResetColor();
-                goto userpromptstart;
+                ReadStats();
+                if (UserKeyPress.Key == ConsoleKey.D3)
+                {
+                    exporation.ExporationChance();
+                    valid = true;
+                }
+                if (UserKeyPress.Key == ConsoleKey.D2)
+                {
+                    Meditate();
+                    valid = true;
+                    System.Threading.Thread.Sleep(1000);
+                }
+                if (UserKeyPress.Key == ConsoleKey.D1)
+                {
+                    SpellChoice();
+                    valid = true;
+                    System.Threading.Thread.Sleep(1000);
+                }
+                if (UserKeyPress.Key == ConsoleKey.Escape)
+                {
+                    System.Environment.Exit(0);
+                }
+                if (valid == false)
+                {
+                    Console.Clear();
+                    titleMethod();
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write("You can only 'Meditate,' or 'Cast Spell.'");
+                    Console.ResetColor();
+                    goto userpromptstart;
+                }
             }
         }
         public void LearnSpell()

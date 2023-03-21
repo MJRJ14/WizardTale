@@ -8,12 +8,14 @@ using WizardTale;
 using Wizard_Tales.WorldMethodsC;
 using Wizard_Tales.ExplorationC;
 using Wizard_Tales.SaveAndLoad;
+using System.Threading;
 
 namespace Wizard_Tales.IntroC
 {
     public class Intro
     {
         public string chosenName { get; set; }
+        public bool finishedIntro { get; set; } = false;
         public void Introduction()
         {
             Wizard firstWizard = new Wizard();
@@ -66,6 +68,7 @@ namespace Wizard_Tales.IntroC
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.Write(intro5);
             Console.ResetColor();
+            finishedIntro= true;
             System.Threading.Thread.Sleep(2500);
             Console.Clear();
 

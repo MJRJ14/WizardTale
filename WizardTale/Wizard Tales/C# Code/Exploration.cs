@@ -67,12 +67,30 @@ namespace Wizard_Tales.ExplorationC
                     List<string> RandomItem = Information.Items.ToList<string>();
                     int itemMaxNumber = RandomItem.Count();
                     int randomItemSelection = random.Next(0, (itemMaxNumber-1));
+
                     List<string> RandomRarirty = Information.Rarity.ToList<string>();
                     int rarityMaxNumber = RandomRarirty.Count();
-                    int randomRaritySelection = random.Next(0, (rarityMaxNumber - 1));
+                    int randomRaritySelection = random.Next(0, 100000001);
+                    if (randomRaritySelection >= 0 && randomRaritySelection <= 10) { randomRaritySelection = 7; }
+                    else if (randomRaritySelection >= 11 && randomRaritySelection <= 100) { randomRaritySelection = 6; }
+                    else if (randomRaritySelection >= 101 && randomRaritySelection <= 1000) { randomRaritySelection = 5; }
+                    else if (randomRaritySelection >= 1001 && randomRaritySelection <= 10000) { randomRaritySelection = 4; }
+                    else if (randomRaritySelection >= 10001 && randomRaritySelection <= 100000) { randomRaritySelection = 3; }
+                    else if (randomRaritySelection >= 100001 && randomRaritySelection <= 1000000) { randomRaritySelection = 2; }
+                    else if (randomRaritySelection >= 1000001 && randomRaritySelection <= 10000000) { randomRaritySelection = 1; }
+                    else if (randomRaritySelection >= 10000001 && randomRaritySelection <= 100000000) { randomRaritySelection = 0; }
+
                     Console.CursorTop = ((Console.WindowHeight - 3) / 2);
                     Console.CursorLeft = ((Console.WindowWidth - (RandomRarirty[randomRaritySelection].Length + 3 + RandomItem[randomItemSelection].Length)) / 2);
+                    Console.ForegroundColor = Information.RarityColor[randomRaritySelection];
+
                     Console.WriteLine(RandomRarirty[randomRaritySelection] + " - " + RandomItem[randomItemSelection]);
+                    Console.ResetColor();
+                    System.Threading.Thread.Sleep(1000);
+                    Console.Write("\n\n");
+                    Console.CursorLeft = ((Console.WindowWidth - 21) / 2);
+                    Console.Write("Press any key to exit: ");
+                    Console.ReadKey();
                 }
                 if (encounterResult >= 31 && encounterResult <= 99) // Combat
                 {

@@ -26,14 +26,17 @@ namespace WizardTale
             firstWizard.spellSlots = 2;
             firstWizard.experience = 0;
             firstWizard.level = 1;
-
+            
             Start.Introduction();
             firstWizard.name = Start.chosenName.ToString();
-
-            do
+            if (Start.finishedIntro == true) 
             {
-                firstWizard.UserPrompt();
-            } while (true);
+                firstWizard.startProgram = true;
+                do
+                {
+                    firstWizard.UserPrompt();
+                } while (true);
+            }
         }
     }
 }
