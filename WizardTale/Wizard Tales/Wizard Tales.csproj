@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="C# Code\Exploration.cs" />
     <Compile Include="C# Code\Intro.cs" />
+    <Compile Include="C# Code\Inventory.cs" />
     <Compile Include="C# Code\Main.cs" />
     <Compile Include="C# Code\SaveAndLoad.cs" />
     <Compile Include="C# Code\Wizard.cs" />

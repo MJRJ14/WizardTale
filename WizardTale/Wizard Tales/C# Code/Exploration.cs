@@ -8,6 +8,7 @@ using Wizard_Tales.IntroC;
 using Wizard_Tales.WizardC;
 using Wizard_Tales.SaveAndLoad;
 using Wizard_Tales.WorldMethodsC;
+using Wizard_Tales.InventoryC;
 
 namespace Wizard_Tales.ExplorationC
 {
@@ -49,6 +50,7 @@ namespace Wizard_Tales.ExplorationC
         }
         public void ExplorationDestination()
         {
+            Inventory Inventory = new Inventory();
             Console.Clear();
             WorldMethods Information = new WorldMethods();
             Random random = new Random();
@@ -85,6 +87,9 @@ namespace Wizard_Tales.ExplorationC
                     Console.ForegroundColor = Information.RarityColor[randomRaritySelection];
 
                     Console.WriteLine(RandomRarirty[randomRaritySelection] + " - " + RandomItem[randomItemSelection]);
+                    Inventory.InventoryList.Add(RandomRarirty[randomRaritySelection] + " - " + RandomItem[randomItemSelection]);
+                    Inventory.InventoryCount++;
+                    Inventory.InventoryMethod();
                     Console.ResetColor();
                     System.Threading.Thread.Sleep(1000);
                     Console.Write("\n\n");
